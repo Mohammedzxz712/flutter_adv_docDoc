@@ -6,5 +6,4 @@ void main() {
 
   runApp(DocApp(appRouter: AppRouter()));
 
-
 }
