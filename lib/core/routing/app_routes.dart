@@ -1,8 +1,7 @@
 
 import 'package:doctor_app/core/routing/reoutes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
+import '../../features/login/ui/screen/login_screen.dart';
 import '../../features/onboarding/onboarding_screen.dart';
 
 class AppRouter {
@@ -10,6 +9,8 @@ class AppRouter {
     switch (settings.name) {
       case Routes.onBoarding:
         return MaterialPageRoute(builder: (_) => const OnBoarding());
+      case Routes.login:
+        return MaterialPageRoute(builder: (_) => const LoginScreen());
       default:
         return _errorRoute();
     }
