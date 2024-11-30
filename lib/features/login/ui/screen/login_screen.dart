@@ -5,9 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/styles.dart';
 import '../../../../core/widgets/app_text_bottom.dart';
-import '../../data/models/login_request_body.dart';
 import '../../logic/login_cubit.dart';
-import '../widgets/already_have_account_text.dart';
+import '../widgets/dont_have_account.dart';
 import '../widgets/email_and_password.dart';
 import '../widgets/terms_and_conditions.dart';
 
@@ -71,12 +70,7 @@ class LoginScreen extends StatelessWidget {
   }
   void validateAndDoLogin(BuildContext context) {
     if (context.read<LoginCubit>().formKey.currentState!.validate()) {
-      context.read<LoginCubit>().emitLoginState(
-        LoginRequestBody(
-            email: context.read<LoginCubit>().emailController.text,
-            password: context.read<LoginCubit>().passwordController.text),
-      );
+      context.read<LoginCubit>().emitLoginState();
     }
-
   }
 }
