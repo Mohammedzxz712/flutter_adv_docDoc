@@ -8,11 +8,11 @@ platform :android do
     sh "flutter build apk --release --flavor production --target lib/main_production.dart --no-tree-shake-icons"
     firebase_app_distribution(
         app: "1:1062344826119:android:604874f4c32952929c79a2",
-        firebase_cli_token: "1//09InFeBpDNtOfCgYIARAAGAkSNwF-L9Irt1fPH9Ws5a-PwLXFzbjGhZJYcwrqRSrnX6JSTfzlTPyRuyANJJL3amNcsPAPSaTfR0c",
-        #android_artifact_type : "APK",
+        firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
+        #android_artifact_type: "APK",
         android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
         testers: "zizo111199zz@gmail.com",
-        release_notes: "First Fastlane Firebase Distribution YouTube Video!"
+        release_notes: "Second Release By using Github Actions Fastlane Firebase Distribution!"
         
   )
   end
