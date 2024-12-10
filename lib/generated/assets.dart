@@ -3,9 +3,14 @@ class Assets {
   Assets._();
 
   static const String imagesDoctor = 'assets/images/doctor.png';
+  static const String imagesHomeBluePattern = 'assets/images/home_blue_pattern.png';
+  static const String imagesOmar = 'assets/images/omar.png';
   static const String imagesSplash = 'assets/images/splash.png';
   static const String imagesSplashNew = 'assets/images/splash_new.png';
+  static const String svgAlert = 'assets/svg/Alert.svg';
   static const String svgDocIcon = 'assets/svg/doc_icon.svg';
   static const String svgDocLogoBack = 'assets/svg/doc_logo_back.svg';
+  static const String svgGeneralSpeciality = 'assets/svg/general_speciality.svg';
+  static const String svgNotifications = 'assets/svg/notifications.svg';
 
 }
