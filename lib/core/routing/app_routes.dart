@@ -1,5 +1,6 @@
 import 'package:doctor_app/core/di/dependency_injection.dart';
 import 'package:doctor_app/core/routing/reoutes.dart';
+import 'package:doctor_app/features/home/logic/home_cubit.dart';
 import 'package:doctor_app/features/home/ui/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,16 +17,22 @@ class AppRouter {
       case Routes.onBoarding:
         return MaterialPageRoute(builder: (_) => const OnBoarding());
       case Routes.home:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
+        return MaterialPageRoute(builder: (_) =>
+            BlocProvider(
+              create: (context) => HomeCubit(getIt())..getSpecializations(),
+              child: const HomeScreen(),
+            ));
       case Routes.signup:
         return MaterialPageRoute(
-            builder: (_) => BlocProvider(
+            builder: (_) =>
+                BlocProvider(
                   create: (context) => getIt<SignUpCubit>(),
                   child: const SignUpScreen(),
                 ));
       case Routes.login:
         return MaterialPageRoute(
-            builder: (_) => BlocProvider(
+            builder: (_) =>
+                BlocProvider(
                   create: (context) => getIt<LoginCubit>(),
                   child: const LoginScreen(),
                 ));
